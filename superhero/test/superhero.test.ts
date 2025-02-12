@@ -4,6 +4,7 @@ import prisma from "../src/models/prismaClient";
 
 describe("Superhero API - POST /superheroes", () => {
   afterAll(async () => {
+    await prisma.superhero.deleteMany();
     await prisma.$disconnect(); // Close Prisma connection
   });
 

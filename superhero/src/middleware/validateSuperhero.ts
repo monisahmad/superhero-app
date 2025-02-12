@@ -17,9 +17,10 @@ export const validateSuperhero = async (
   next: NextFunction
 ) => {
   try {
-    console.log('################', req.body);
-    
-    req.body = await superheroSchema.validate(req.body, { abortEarly: false, stripUnknown: true });
+    req.body = await superheroSchema.validate(req.body, {
+      abortEarly: false,
+      stripUnknown: true,
+    });
     next();
   } catch (error: any) {
     if (error instanceof yup.ValidationError) {
