@@ -1,0 +1,17 @@
+{
+  "name": "monis-ejamm",
+  "private": true,
+  "workspaces": [
+    "superhero",
+    "superhero-fe"
+  ],
+  "scripts": {
+    "installWorkspaces": "npm install --workspaces",
+    "start:backend": "cd superhero && npm start",
+    "start:frontend": "cd superhero-fe && npm start",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
